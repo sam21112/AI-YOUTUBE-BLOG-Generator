@@ -64,7 +64,7 @@ def yt_title(yt_link):
             video_id = video_id[:ampersand_position]
         
         # YouTube Data API v3 URL
-        api_key = "AIzaSyCgUMMPsq92ddo6T5LkJv8JiNZWRFnzOtI"  # Replace with your YouTube API key
+        api_key = settings.YOUTUBE_API_KEY
         url = f"https://www.googleapis.com/youtube/v3/videos?part=snippet&id={video_id}&key={api_key}"
         
         # Make the API request
@@ -118,7 +118,7 @@ def get_transcription(link):
     if not audio_file:
         return None
 
-    aai.settings.api_key = "dc22feaa81734e9fb719b10dafe7862c"
+    aai.settings.api_key = settings.ASSEMBLYAI_API_KEY
     transcriber = aai.Transcriber()
     try:
         transcript = transcriber.transcribe(audio_file)
@@ -130,7 +130,7 @@ def get_transcription(link):
 
 from openai import OpenAI
 
-client = OpenAI(api_key="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")
+client = OpenAI(api_key=settings.OPENAI_API_KEY)
 
 def generate_blog_from_transcriptions(transcription):
     prompt = (

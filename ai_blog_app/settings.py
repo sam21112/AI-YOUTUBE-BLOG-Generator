@@ -131,3 +131,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 LOGIN_URL = 'login'
+from decouple import config
+
+YOUTUBE_API_KEY = config('YOUTUBE_API_KEY')
+ASSEMBLYAI_API_KEY = config('ASSEMBLYAI_API_KEY')
+OPENAI_API_KEY = config('OPENAI_API_KEY')
