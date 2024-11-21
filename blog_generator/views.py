@@ -134,7 +134,7 @@ client = OpenAI(api_key=settings.OPENAI_API_KEY)
 
 def generate_blog_from_transcriptions(transcription):
     prompt = (
-        "Based on the following transcript from a YouTube video, write a comprehensive blog. "
+        "Based on the following transcript from a YouTube video, write a comprehensive blog.Do not print anyhting in bold ,italic or anyhting else other thehn normal text. "
         "Do not make it look like a YouTube video; make it look like a proper blog article:\n\n"
         f"{transcription}\n\nArticle:"
     )
