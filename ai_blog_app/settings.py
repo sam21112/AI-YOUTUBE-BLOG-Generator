@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+from decouple import config
+
 
 from pathlib import Path
 import os
@@ -20,8 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-5g%swq9a&#c6sxor4ae^7r&xl4g05v%n7)p6@^%(i0i4k+se!o"
-
+ 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -136,3 +137,5 @@ from decouple import config
 YOUTUBE_API_KEY = config('YOUTUBE_API_KEY')
 ASSEMBLYAI_API_KEY = config('ASSEMBLYAI_API_KEY')
 OPENAI_API_KEY = config('OPENAI_API_KEY')
+DJANGO_KEY=config('DJANGO_KEY')
+SECRET_KEY = DJANGO_KEY
