@@ -1,4 +1,4 @@
-# AI-YOUTUBE-BLOG-Generator-DJANGO
+# AI-YOUTUBE-BLOG-Generator-DJANGO-https://ai-youtube-blog-generator-2.onrender.com
 
 The app allows users to signup,login,logout as the basic functionalities.
 
